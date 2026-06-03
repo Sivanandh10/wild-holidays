@@ -1,0 +1,103 @@
+:root {
+  --forest: #{$forest};
+  --forest-2: #{$forest-2};
+  --gold: #{$gold};
+  --stone: #{$stone};
+  --off-white: #{$off-white};
+  --ink: #{$ink};
+  --muted: #{$muted};
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 1.65;
+  color: $ink;
+  background: #ebe8e2;
+  overflow-x: hidden;
+  padding-bottom: 80px;
+
+  @include respond(lg) {
+    padding-bottom: 0;
+  }
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color $transition-fast, opacity $transition-fast;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+.container {
+  width: $container;
+  margin-inline: auto;
+}
+
+.section {
+  padding: clamp(4rem, 10vw, 7rem) 0;
+  position: relative;
+}
+
+.section--dark {
+  background: linear-gradient(180deg, #081510 0%, $forest 100%);
+  color: $white;
+}
+
+.section--stone {
+  background: $stone;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, $gold, $gold-light);
+  z-index: 9999;
+  pointer-events: none;
+}

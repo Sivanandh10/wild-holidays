@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traveler Reviews | Wild Holidays — 1000+ Happy Travelers</title>
+  <meta name="description" content="Read verified Wild Holidays reviews from 1000+ travelers. Share your experience and book your next journey via WhatsApp." />
+  <link rel="canonical" href="https://wildholidays.in/reviews.html" />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,600,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Wild Holidays","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1000"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <img class="logo-light" src="Wild H R White color.png" alt="Wild Holidays" width="40" height="40" />
+        <img class="logo-dark" src="WIld H L black.png" alt="Wild Holidays" width="40" height="40" />
+      </a>
+      <nav class="nav-desktop">
+        <a href="index.html">Home</a>
+        <a href="reviews.html" class="is-active">Reviews</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="packages.html">Packages</a>
+        <a href="plan.html">Plan &amp; Book</a>
+      </nav>
+      <a class="btn btn-primary btn-sm nav-desktop btn-whatsapp" href="https://wa.me/919842209604">Book Now</a>
+      <button id="menuToggle" class="menu-toggle" aria-label="Menu">
+        <span class="menu-toggle__box"><span class="menu-toggle__line"></span><span class="menu-toggle__line"></span><span class="menu-toggle__line"></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div id="navBackdrop" class="nav-backdrop"></div>
+  <nav id="navDrawer" class="nav-drawer">
+    <p class="nav-drawer__label">Menu</p>
+    <a class="nav-drawer__link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home</a>
+    <a class="nav-drawer__link is-active" href="reviews.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Reviews</a>
+    <a class="nav-drawer__link" href="destinations.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 10-16 0c0 3 2.7 7 8 11.7z"/></svg>Destinations</a>
+    <a class="nav-drawer__link" href="packages.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Packages</a>
+    <a class="nav-drawer__link" href="plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Plan &amp; Book</a>
+    <div class="nav-drawer__cta"><a class="btn btn-whatsapp btn-block" href="https://wa.me/919842209604">Book on WhatsApp</a></div>
+  </nav>
+
+  <main>
+    <section class="reviews-hero">
+      <div class="container">
+        <div class="reviews-hero__score" data-avg-rating>4.9</div>
+        <div class="reviews-hero__stars">★★★★★</div>
+        <p class="reviews-hero__count">Based on <span data-review-count>1000+</span> traveler reviews</p>
+        <h1>Trusted by explorers across India</h1>
+        <p style="opacity:0.75;max-width:40ch;margin:0 auto 1.25rem;font-size:0.92rem;">Read real stories. Share yours. Then book your journey on WhatsApp.</p>
+        <a class="btn btn-primary btn-whatsapp" href="https://wa.me/919842209604?text=Hello%20Wild%20Holidays!%20I%20read%20your%20reviews%20and%20want%20to%20book%20a%20trip.">Book on WhatsApp</a>
+      </div>
+    </section>
+
+    <div class="reviews-mobile-flex">
+      <section class="section-compact">
+        <div class="container">
+          <div class="reviews-filter">
+            <button class="filter-chip active" data-review-filter="all">All</button>
+            <button class="filter-chip" data-review-filter="Malaysia">Malaysia</button>
+            <button class="filter-chip" data-review-filter="Andaman">Andaman</button>
+            <button class="filter-chip" data-review-filter="Kerala">Kerala</button>
+            <button class="filter-chip" data-review-filter="Munnar">Munnar</button>
+            <button class="filter-chip" data-review-filter="Ooty">Ooty</button>
+            <button class="filter-chip" data-review-filter="Goa">Goa</button>
+          </div>
+          <div class="reviews-grid" id="reviewsGrid"></div>
+        </div>
+      </section>
+
+      <section class="section-compact review-form-section" id="share-review">
+        <div class="container">
+          <div class="section-heading section-heading--center">
+            <p class="eyebrow">Share Your Experience</p>
+            <h2>Traveled with us? Leave a review</h2>
+            <p>Your review helps other travelers decide — and reaches us instantly on WhatsApp.</p>
+          </div>
+          <form class="review-form-wrap" id="reviewForm">
+            <div class="form-field"><label for="rname">Your Name</label><input class="form-input" id="rname" name="name" required placeholder="Full name" /></div>
+            <div class="form-field"><label for="rcity">City</label><input class="form-input" id="rcity" name="city" placeholder="Your city" /></div>
+            <div class="form-field">
+              <label for="rdest">Destination</label>
+              <select class="form-select" id="rdest" name="destination" required>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Andaman">Andaman</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Munnar">Munnar</option>
+                <option value="Ooty">Ooty</option>
+                <option value="Goa">Goa</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Your Rating</label>
+              <div class="star-picker" role="group" aria-label="Rating">
+                <button type="button" aria-label="1 star">★</button>
+                <button type="button" aria-label="2 stars">★</button>
+                <button type="button" aria-label="3 stars">★</button>
+                <button type="button" aria-label="4 stars">★</button>
+                <button type="button" aria-label="5 stars">★</button>
+              </div>
+            </div>
+            <div class="form-field"><label for="rtext">Your Review</label><textarea class="form-textarea" id="rtext" name="text" required placeholder="Tell us about your journey…"></textarea></div>
+            <button class="btn btn-primary btn-block" type="submit">Submit Review</button>
+            <button class="btn btn-ghost btn-block btn-sm" type="button" id="reviewWhatsApp" style="margin-top:0.5rem;">Also send via WhatsApp</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <section class="cta-strip">
+      <div class="container">
+        <h2>Loved what you read? Start your journey.</h2>
+        <p>One WhatsApp message is all it takes to begin planning.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-whatsapp" href="https://wa.me/919842209604?text=Hello%20Wild%20Holidays!%20I%20want%20to%20book%20after%20reading%20reviews.">Book on WhatsApp</a>
+          <a class="btn btn-secondary" href="plan.html">Plan My Trip</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom"><span>&copy; 2026 Wild Holidays</span><a href="index.html" style="color:rgba(255,255,255,0.6);">Home</a></div>
+  </footer>
+
+  <div class="mobile-cta-bar">
+    <a class="btn btn-outline btn-sm" href="#share-review">Write Review</a>
+    <a class="btn btn-primary btn-sm btn-whatsapp" href="https://wa.me/919842209604">WhatsApp Book</a>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="js/data/config.js"></script>
+  <script src="js/data/reviews.js"></script>
+  <script src="js/reviews-page.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      whUpdateTrustStats();
+      whInitReviewFilters();
+      whInitReviewForm({ targets: ['#reviewsGrid'], highlight: true });
+
+      // Sync latest reviews from the cloud database (kvdb.io)
+      whSyncOnlineReviews(() => {
+        whUpdateTrustStats();
+        const activeFilter = document.querySelector('.reviews-filter .filter-chip.active')?.dataset.reviewFilter || 'all';
+        whRenderReviews(document.getElementById('reviewsGrid'), activeFilter);
+      });
+    });
+  </script>
+</body>
+</html>

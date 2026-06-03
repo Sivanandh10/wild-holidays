@@ -1,0 +1,22 @@
+@import 'variables';
+@import 'base';
+@import 'typography';
+@import 'components';
+@import 'navigation';
+@import 'hero';
+@import 'sections';
+@import 'pages';
+@import 'effects';
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-reveal] { opacity: 1; transform: none; }
+}
