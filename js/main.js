@@ -98,7 +98,7 @@ function renderPackages() {
         <p class="eyebrow">${pkg.destination}</p>
         <h3>${pkg.title}</h3>
         <p style="font-size:0.85rem;color:var(--muted);margin:0;">${pkg.story}</p>
-        <div class="package-card__meta"><span>${pkg.duration}</span><span class="package-card__price">${whFormatPrice(pkg.price)}</span></div>
+        <div class="package-card__meta"><span>${pkg.duration}</span></div>
         <button class="btn btn-whatsapp btn-sm btn-block btn-book" data-pkg="${pkg.id}">Book on WhatsApp</button>
       </div>
     </article>`).join('');
@@ -196,6 +196,62 @@ function initScrollTop() {
   });
 }
 
+function initPlaceSliders() {
+  const sliders = document.querySelectorAll('.place-hero-slider');
+  sliders.forEach((slider) => {
+    const slides = slider.querySelectorAll('.slider-slide');
+    const dots = slider.querySelectorAll('.slider-dot');
+    const btnPrev = slider.querySelector('.prev-arrow');
+    const btnNext = slider.querySelector('.next-arrow');
+    if (!slides.length) return;
+
+    let activeIdx = 0;
+    let timer = null;
+
+    const showSlide = (idx) => {
+      activeIdx = (idx + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === activeIdx));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIdx));
+    };
+
+    const startTimer = () => {
+      stopTimer();
+      timer = setInterval(() => {
+        showSlide(activeIdx + 1);
+      }, 4000);
+    };
+
+    const stopTimer = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+
+    btnPrev?.addEventListener('click', () => {
+      stopTimer();
+      showSlide(activeIdx - 1);
+      startTimer();
+    });
+
+    btnNext?.addEventListener('click', () => {
+      stopTimer();
+      showSlide(activeIdx + 1);
+      startTimer();
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        stopTimer();
+        showSlide(i);
+        startTimer();
+      });
+    });
+
+    startTimer();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initNavigation();
@@ -204,4 +260,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initPackageFilters();
   initPlanner();
   initScrollTop();
+  initPlaceSliders();
 });

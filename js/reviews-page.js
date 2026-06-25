@@ -150,7 +150,21 @@ window.whRenderDestCards = (container) => {
       <div class="dest-card__body">
         <h3>${d.name}</h3>
         <p>${d.story.slice(0, 72)}…</p>
-        <div class="dest-card__meta"><span>${d.duration}</span><strong>${d.price}</strong></div>
+        <div class="dest-card__meta"><span>${d.duration}</span></div>
+      </div>
+    </a>`).join('');
+};
+
+window.whRenderDestCardsByCategory = (container, category) => {
+  if (!container || !window.WH_DESTINATIONS) return;
+  const filtered = window.WH_DESTINATIONS.filter(d => d.category === category);
+  container.innerHTML = filtered.map((d) => `
+    <a class="dest-card" href="places/${d.slug}.html">
+      <div class="dest-card__img"><img src="${d.image.replace('w=1400', 'w=500')}" alt="${d.name}" loading="lazy" width="320" height="200" /></div>
+      <div class="dest-card__body">
+        <h3>${d.name}</h3>
+        <p>${d.story.slice(0, 72)}…</p>
+        <div class="dest-card__meta"><span>${d.duration}</span></div>
       </div>
     </a>`).join('');
 };
