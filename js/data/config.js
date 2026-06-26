@@ -1,6 +1,6 @@
 window.WH_CONFIG = {
-  whatsapp: '919842209604',
-  phone: '+91 98422 09604',
+  whatsapp: '919894729435',
+  phone: '+91 98947 29435',
   email: 'hello@wildholidays.in',
   siteUrl: 'https://wildholidays.in'
 };
